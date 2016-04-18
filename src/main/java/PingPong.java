@@ -10,27 +10,35 @@ import java.util.ArrayList;
 public class PingPong {
 
   public static void main(String[] args) {
-    //String givenNumber = request.queryParams("number");
+     String layout = "templates/layout.vtl";
 
-  //    get("/", (request, response) -> {
-  //      HashMap model = new HashMap();
-  //
-  //      model.put("template", "templates/form.vtl");
-  //      return new ModelAndView(model, "templates/layout.vtl");
-  //    }, new VelocityTemplateEngine());
-  // }
-  //
-  //     get("/form", (request, response) -> {
-  //      HashMap model = new HashMap();
-  //      String inputtedNumber = request.queryParams("number");
-  //      Integer givenNumber = Integer.parseInt(inputtedNumber);
-  //
-  //      model.put("number", givenNumber);
-  //      model.put("template", "templates/form.vtl");
-  //      return new ModelAndView(model, "templates/layout.vtl");
-  //    }, new VelocityTemplateEngine());
-  }
-  public ArrayList<Object> pingPong(Integer inputtedNumber) {
+     get("/", (request, response) -> {
+       Map<String, Object> model = new HashMap<String, Object>();
+
+       model.put("template", "templates/form.vtl");
+       return new ModelAndView(model, layout);
+     }, new VelocityTemplateEngine());
+
+      get("/results", (request, response) -> {
+       Map<String, Object> model = new HashMap<String, Object>();
+       model.put("template", "templates/results.vtl");
+
+       String inputtedNumber = request.queryParams("number");
+       Integer countUpTo = Integer.parseInt(inputtedNumber);
+      //  PingPong myPingPong = new PingPong();
+       ArrayList<Object> pingPong = pingPong(countUpTo);
+
+       model.put("pingPong", pingPong);
+       model.put("inputtedNumber", inputtedNumber);
+       model.put("number", request.queryParams("number"));
+       return new ModelAndView(model, layout);
+     }, new VelocityTemplateEngine());
+
+
+
+   }
+
+  public static ArrayList<Object> pingPong(Integer inputtedNumber) {
     ArrayList<Object> myList = new ArrayList<Object>();
     for (Integer number = 1; number <= inputtedNumber; number++) {
       if (number % 5 == 0 && number % 3 == 0) {
