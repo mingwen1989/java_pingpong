@@ -1,13 +1,46 @@
-<h1>Leap year detector</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel='stylesheet' href='/app.css'>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <title>Ping Pong</title>
+  </head>
+  <body>
+    <div class="form-group">
+      <div class="row">
+        <div class="pingpong">
+        <h1>Ping-Pong</h1>
+        </div>
+        <div class="col-xs-3">
+          <div id="leftcolumn"><h3>About Ping Pong</h3>
+          <h4>Created by:</h4>
+          <p>Ming Wen</p>
+          <h4>GitHub Username/URL</h4>
+          <p>mwen82</p>
+          </div>
+        </div>
+        <div class="col-xs-9">
+        <br>
+        <div id="rightcolumn">
+          <br>
+          <h2>Let's play!</h2>
+          <h3>Rules:</h3>
+          <p>Ping Pong will count up to your number from 1 with the following exceptions:</p>
+          <ul>
+            <li>1. Numbers divisible by 3 become "ping"</li>
+            <li>2. Numbers divisible by 5 become "pong"</li>
+            <li>3. Numbers divisible by 3 and 5 become "pingpong"</li>
+          </ul>
+          <form id="input">
+            <p>Enter your number here:</p><input id="text" class="form-control" type="text" name="number"><br><button type="submit" class="btn btn-info">Ping Pong!</button>
+        </form>
+      </div>
 
-<p>Find out if any year to the form below.  Submit your year and we will tell you
-  if it is a leap year!</p>
-
-<form action='/detector' method='get'>
-  <div class="form-group">
-    <label for="year">Year</label>
-    <input id="year" name="year" class="form-control" type="text">
-  </div>
-
-  <button type="submit" class="btn btn-info">Is it a leap year?</button>
-</form>
+        <br><div id="result"><p><span id="displayresult">$numbers</span></p></div>
+      </div></div>
+    </div>
+  </body>
+</html>
