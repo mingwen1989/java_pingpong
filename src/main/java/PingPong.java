@@ -32,20 +32,21 @@ public class PingPong {
   }
   public ArrayList<Object> pingPong(Integer inputtedNumber) {
     ArrayList<Object> myList = new ArrayList<Object>();
-     for (Integer number = 1; number <= inputtedNumber; number++) {
-    //   if (number % 5 == 0 && number % 3 == 0) {
-    //    myList.add("ping-pong");
-    //   }
-    //   else if (number % 5 == 0) {
-    //    myList.add("pong");
-    //   }
-    //   else if (number % 3 == 0) {
-    //    myList.add("ping");
-    //   }
-    //   else {
-    //   }
+    for (Integer number = 1; number <= inputtedNumber; number++) {
+      if (number % 5 == 0 && number % 3 == 0) {
+       myList.add("ping-pong");
+      }
+      else if (number % 5 == 0) {
+       myList.add("pong");
+      }
+      else if (number % 3 == 0) {
+       myList.add("ping");
+      }
+      else {
       myList.add(number);
-     }
+      }
+
+    }
     return myList;
   }
 
