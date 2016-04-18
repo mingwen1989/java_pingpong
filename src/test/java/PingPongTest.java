@@ -10,10 +10,8 @@ public class PingPongTest {
     ArrayList<Object> expected = new ArrayList<Object>();
     expected.add(1);
     expected.add(2);
-    expected.add("ping");
-    expected.add(3);
 
-    assertEquals(expected, testPingPong.pingPong(15));
+    assertEquals(expected, testPingPong.pingPong(2));
   }
 
 }
