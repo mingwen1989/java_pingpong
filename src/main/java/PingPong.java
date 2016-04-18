@@ -30,7 +30,7 @@ public class PingPong {
 
        model.put("pingPong", pingPong);
        model.put("inputtedNumber", inputtedNumber);
-       model.put("number", request.queryParams("number"));
+       
        return new ModelAndView(model, layout);
      }, new VelocityTemplateEngine());
 
