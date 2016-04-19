@@ -5,8 +5,6 @@ import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 import java.util.ArrayList;
 
-
-
 public class PingPong {
 
   public static void main(String[] args) {
@@ -30,12 +28,9 @@ public class PingPong {
 
        model.put("pingPong", pingPong);
        model.put("inputtedNumber", inputtedNumber);
-       
+
        return new ModelAndView(model, layout);
      }, new VelocityTemplateEngine());
-
-
-
    }
 
   public static ArrayList<Object> pingPong(Integer inputtedNumber) {
@@ -53,10 +48,7 @@ public class PingPong {
       else {
       myList.add(number);
       }
-
     }
     return myList;
   }
-
-
 }
